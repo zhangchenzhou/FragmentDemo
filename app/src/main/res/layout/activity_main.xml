@@ -9,9 +9,43 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.zhou.fragmentdemo.MainActivity">
+    <fragment
+        android:id="@+id/title_list"
+        android:name="com.example.zhou.fragmentdemo.MyListFragment"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:id="@+id/detail"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/title_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    </LinearLayout>
+
+
+
+    <!--<fragment-->
+        <!--android:id="@+id/myTextF"-->
+        <!--android:name="com.example.zhou.fragmentdemo.FragmentA"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:tag="addb"-->
+        <!--&gt;-->
+
+    <!--</fragment>-->
+    <!--<LinearLayout-->
+        <!--android:id="@+id/contain"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_below="@id/myTextF"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="20dp">-->
+
+    <!--</LinearLayout>-->
+    <!--<Button-->
+        <!--android:id="@+id/add"-->
+        <!--android:layout_below="@id/contain"-->
+        <!--android:text="添加fragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
 </RelativeLayout>
