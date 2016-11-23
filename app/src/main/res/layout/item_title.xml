@@ -7,4 +7,24 @@
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <!--<com.example.zhou.fragmentdemo.VLMarqueeTextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:text="fdjsalfd;jasklf;djasklf;djsaofidjskal;fjkalsf;jdkal;fjdklf;ajskdfl;jaskfl;asjf"-->
+        <!--android:singleLine="true"-->
+        <!--android:ellipsize="marquee"-->
+        <!--android:focusable="true"-->
+        <!--android:marqueeRepeatLimit="marquee_forever"-->
+        <!--android:focusableInTouchMode="true"-->
+        <!--android:scrollHorizontally="true"-->
+        <!--android:layout_height="wrap_content" />-->
+    <!--<com.example.zhou.fragmentdemo.VLMarqueeTextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:text="fdjsalfd;jasklf;djasklf;djsaofidjskal;fjkalsf;jdkal;fjdklf;ajskdfl;jaskfl;asjf"-->
+        <!--android:singleLine="true"-->
+        <!--android:ellipsize="marquee"-->
+        <!--android:focusable="true"-->
+        <!--android:marqueeRepeatLimit="marquee_forever"-->
+        <!--android:focusableInTouchMode="true"-->
+        <!--android:scrollHorizontally="true"-->
+        <!--android:layout_height="wrap_content" />-->
 </LinearLayout>

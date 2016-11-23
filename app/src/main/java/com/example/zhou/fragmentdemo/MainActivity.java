@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements MyListFragment.Cl
     }
 
     private void initData() {
-        manager = (FragmentManager)getSupportFragmentManager();
+        manager = getSupportFragmentManager();
         titleList = (MyListFragment) manager.findFragmentById(R.id.title_list);
         mapList = getSimpleData();
         titleList.setListAdapter(new SimpleAdapter(MainActivity.this,mapList,R.layout.item_title,new String[]{"title"},new int[]{R.id.title}));
@@ -86,10 +85,17 @@ public class MainActivity extends AppCompatActivity implements MyListFragment.Cl
         if(position<=fragments.size()-1){
             trans =  manager.beginTransaction();//每次都要新开启一个事务  否则再次commit 会提示错误的状态异常!
             trans.replace(R.id.detail,fragments.get(position));
+            trans.addToBackStack("a");
             trans.commit();
         }else if(position == mapList.size()-1){
+            manager.popBackStack();
+
+        }else if(position == mapList.size()-2){
             Intent intent = new Intent(this,TestActivtiy.class);
             startActivity(intent);
+        }else if(position == mapList.size()-3){
+            TestDialogFragment dialogFragment = new TestDialogFragment();
+            dialogFragment.show(manager,"123");
         }else{
             Bundle b=new Bundle();
             b.putString("title",mapList.get(position).get("title"));
@@ -97,7 +103,15 @@ public class MainActivity extends AppCompatActivity implements MyListFragment.Cl
             other.setArguments(b);
             trans =  manager.beginTransaction();//每次都要新开启一个事务  否则再次commit 会提示错误的状态异常!
             trans.replace(R.id.detail,other);
+            trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             trans.commit();
+//            manager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+//                @Override
+//                public void onBackStackChanged() {
+//
+//                }
+//            });
+//            manager.popBackStack();
 //            Toast.makeText(this,mapList.get(position).get("title"),Toast.LENGTH_LONG).show();
         }
     }
